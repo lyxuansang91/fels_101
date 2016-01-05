@@ -1,34 +1,24 @@
-<% if 1 < 0 %>
-<div class="row">
-  <div class="col-md-4 border-right">
-    <%= render 'shared/user_info' %>
-  </div>
-
-
-  <div class="col-md-8">
-    <div class="row">
-      <div class="col-md-6">
-      <%= link_to "Words", words_path, class: "btn btn-default btn-primary full-size" %>
-      </div>
-
-      <div class="col-md-6">
-      <%= link_to "Lessons", categories_path, class: "btn btn-default btn-primary full-size"%>
-      </div>
+<% if signed_in? %>
+  <div class="row">
+    <div class="col-md-4 border-right">
+      <%= render "shared/user_info" %>
     </div>
-  <h3>User Activities</h3>
-  <hr />
-    <%= render 'shared/activity' %>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-6">
+          <%= link_to t("words"), "#", class: "btn btn-default btn-primary full-size" %>
+        </div>
+        <div class="col-md-6">
+          <%= link_to t("lessons"), "#", class: "btn btn-default btn-primary full-size"%>
+        </div>
+      </div>
+      <hr />
+    </div>
   </div>
-</div>
-<% else  %>
-<div class="center jumbotron">
-  <h1>Welcome To Framgia Elearning System Applciation</h1>
-  <h2>
-    <!-- <a href="#">Framgia Elearning System Application</a> -->
-  </h2>
-  <%= link_to "Sign up now!", "#" , class: "btn btn-large btn-primary" %>
-
-</div>
-
-<%= link_to image_tag("http://rubyonrails.org/images/rails.png", alt: "Rails"), "http://rubyonrails.org" %>
+<% else %>
+  <div class="center jumbotron">
+    <h1><%= t "app_name" %></h1>
+    <%= link_to t("sign_up"), signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+  <%= link_to image_tag("http://rubyonrails.org/images/rails.png", alt: "Rails"), "http://rubyonrails.org" %>
 <% end %>
