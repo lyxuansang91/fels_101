@@ -1,0 +1,95 @@
+@import "bootstrap";
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+$grayLight: #999;
+$gray: #555;
+$grayLighter: #808080;
+$grayLighter: #999;
+$grayDarker: #222;
+$blue: #0000FF;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+body {
+  padding-top: 60px;
+}
+
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  a {
+    color: $gray;
+    &:hover {
+      color: $grayDarker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.activities {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.border-right {
+  border-right: 1px solid $grayLighter;
+}
+
+.full-size {
+  width: 100%;
+  text-align: center;
+  text-size: 18px;
+}
+
+.padding-right-60 {
+  margin-left: 60px;
+}
+
+.margin-right-60 {
+  margin-right: 60px;
+}
+
+.text-area {
+  height: 180px;
+}
+
+.default-size {
+  width: 200px;
+  margin: 20px 0;
+}

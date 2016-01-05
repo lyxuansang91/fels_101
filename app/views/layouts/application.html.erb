@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fels101</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+<!--   <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css', media: 'all', rel: 'stylesheet'  %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js'%> -->
+
+  <%= render 'layouts/shim' %>
 </head>
 <body>
 
-<%= yield %>
+<%= render 'layouts/header' %>
+
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+  <%= debug(params) if Rails.env.development? %>
+</div>
 
 </body>
 </html>
