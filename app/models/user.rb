@@ -15,14 +15,30 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z0-9\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX},                uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, length: {minimum: 6}
+  validates :password, length: {minimum: 6}, allow_blank: true
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
-
   def User.digest token
     Digest::SHA1.hexdigest token.to_s
+  end
+
+   def following? other_user
+    relationships.find_by followed_id: other_user.id
+  end
+
+  def follow! other_user
+    relationships.create! followed_id: other_user.id
+  end
+
+  def unfollow! other_user
+    relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  private
+  def create_remember_token
+    remember_token = User.digest User.new_remember_token
   end
 end
