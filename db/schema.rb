@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111071425) do
+ActiveRecord::Schema.define(version: 20160112043543) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160111071425) do
     t.integer  "category_id", limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.integer  "user_id",     limit: 4
   end
 
   add_index "lessons", ["category_id", "created_at"], name: "index_lessons_on_category_id_and_created_at", using: :btree
@@ -58,7 +59,6 @@ ActiveRecord::Schema.define(version: 20160111071425) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "results", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
     t.integer  "lesson_id",  limit: 4
     t.integer  "word_id",    limit: 4
     t.integer  "answer_id",  limit: 4
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20160111071425) do
     t.datetime "updated_at",           null: false
   end
 
-  add_index "results", ["user_id", "lesson_id", "created_at"], name: "index_results_on_user_id_and_lesson_id_and_created_at", using: :btree
+  add_index "results", ["lesson_id", "created_at"], name: "index_results_on_user_id_and_lesson_id_and_created_at", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 255

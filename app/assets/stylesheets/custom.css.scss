@@ -33,6 +33,14 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+}
+
+select {
+  width: auto;
+}
+
 input {
   height: auto !important;
 }
@@ -105,3 +113,4 @@ footer {
   width: 200px;
   margin: 20px 0;
 }
+

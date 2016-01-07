@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  root "static_pages#home"
 
+  root "static_pages#home"
+  resources :words, only: [:index]
   resources :users, only: [:create, :show, :edit, :update]
   resources :categories, only: [:index]
   get "/help" => "static_pages#help"
