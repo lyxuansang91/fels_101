@@ -32,7 +32,6 @@ en:
   sign_up: "Sign up"
   create_account: "Create my account"
   new_users: "New user?"
-  user_activities: "User Activities"
   words: "Words"
   about: "About"
   contact: "Contact"
@@ -50,7 +49,10 @@ en:
   help_page: "This is help page"
   form_contain: The form contains
   number_of_words: "100 words"
-  please_sign_in: "Please sign in"
   rails: "Rails"
   user_name: "User Name"
   user_acitivities: "User Acitivities"
+  edit_profile: "Edit Profile"
+  update_user_success: "Update user successfully!"
+  permission_denied: "Permission denied. Wrong user. Please try again!"
+

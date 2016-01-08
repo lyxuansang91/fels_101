@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :activities
+  has_many :activities, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_relationships, foreign_key: "followed_id",
     class_name: "Relationship", dependent: :destroy
@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, length: {minimum: 6}, allow_nil: true
+  mount_uploader :avatar, AvatarUploader
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

@@ -1,3 +1,2 @@
-<%= image_tag "https://secure.gravatar.com/avatar/bebfcf57d6d8277d806a9ef3385c078d",
-  size: Settings.user.avatar.size_150, alt: t("user_name") %>
-<h2><%= @current_user.name %></h2>
+<%= image_tag user.avatar.url.to_s, size: Settings.user.avatar.size_150, alt: t("user_name") %>
+<h2><%= user.name %></h2>

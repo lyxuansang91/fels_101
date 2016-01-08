@@ -1,8 +1,23 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, except: [:create, :new]
+  before_action :find_user, only: [:edit, :update, :show]
+  before_action :correct_user, only: [:edit, :update]
+
   def index
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "update_user_success"
+      redirect_to user_path @user
+    end
+  end
+
   def show
+    @activities = @user.activities.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def create
@@ -23,6 +38,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.required(:user).permit :name, :email, :password,
-      :password_confirmation
+      :password_confirmation, :avatar
+  end
+
+  def find_user
+    @user = User.find params[:id]
   end
 end
