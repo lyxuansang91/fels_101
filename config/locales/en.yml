@@ -50,3 +50,7 @@ en:
   help_page: "This is help page"
   form_contain: The form contains
   number_of_words: "100 words"
+  please_sign_in: "Please sign in"
+  rails: "Rails"
+  user_name: "User Name"
+  user_acitivities: "User Acitivities"

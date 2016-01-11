@@ -1,0 +1,5 @@
+per_page: 3
+user:
+  avatar:
+    size_100: "100x100"
+    size_150: "150x150"

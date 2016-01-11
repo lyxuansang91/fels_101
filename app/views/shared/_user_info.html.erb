@@ -1,7 +1,3 @@
-<%= image_tag "wrong.png", size: "150x150", alt: "User Name" %>
-<h2>
-  <%= @current_user.name %>
-</h2>
-<h5 class="text-left">
-  <%= t "number_of_words" %>
-</h5>
+<%= image_tag "https://secure.gravatar.com/avatar/bebfcf57d6d8277d806a9ef3385c078d",
+  size: Settings.user.avatar.size_150, alt: t("user_name") %>
+<h2><%= @current_user.name %></h2>
