@@ -1,0 +1,18 @@
+<% @categories.each.with_index do |item, index| %>
+  <% pull_class = index % 2 == 0 ? "pull-left" : "pull-right" %>
+  <div class="row">
+    <div class="col-md-6 <%= pull_class %>">
+      <h4>
+        <span><%= item.name %></span><%= t "category.number_of_words" %>
+      </h4>
+      <%= item.description %>
+      <br />
+      <a href="#" class="btn btn-default pull-right">
+        <%= t "category.start" %>
+      </a>
+    </div>
+    <textarea class="text-area col-md-6 <%= pull_class %>"></textarea>
+  </div>
+  <div class="clear"></div>
+<% end %>
+<%= will_paginate @categories %>

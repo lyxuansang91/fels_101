@@ -54,3 +54,6 @@ en:
   rails: "Rails"
   user_name: "User Name"
   user_acitivities: "User Acitivities"
+  category:
+    number_of_words: "You're learned 20/500"
+    start: "Start"
