@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160105030143) do
+ActiveRecord::Schema.define(version: 20160111071425) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -23,24 +23,23 @@ ActiveRecord::Schema.define(version: 20160105030143) do
   add_index "activities", ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at", using: :btree
 
   create_table "answers", force: :cascade do |t|
-    t.integer  "word_id",           limit: 4
-    t.string   "name",              limit: 255
-    t.integer  "correct_answer_id", limit: 4
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.integer  "word_id",        limit: 4
+    t.string   "name",           limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "correct_answer"
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",        limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "description", limit: 255
   end
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.integer  "category_id", limit: 4
-    t.string   "word",        limit: 255
-    t.string   "answer",      limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
