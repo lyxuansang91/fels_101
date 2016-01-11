@@ -12,7 +12,9 @@
           <%= link_to t("lessons"), "#", class: "btn btn-default btn-primary full-size"%>
         </div>
       </div>
+      <h3><%= t "user_acitivities" %></h3>
       <hr />
+      <%= render "shared/activity", activities: @activities %>
     </div>
   </div>
 <% else %>
@@ -20,5 +22,6 @@
     <h1><%= t "app_name" %></h1>
     <%= link_to t("sign_up"), signup_path, class: "btn btn-large btn-primary" %>
   </div>
-  <%= link_to image_tag("http://rubyonrails.org/images/rails.png", alt: "Rails"), "http://rubyonrails.org" %>
+
+  <%= link_to image_tag("http://rubyonrails.org/images/rails.png", alt: t("Rails")), "http://rubyonrails.org" %>
 <% end %>

@@ -1,0 +1,16 @@
+<div class="activities">
+  <% @activities.each do |activity| %>
+    <div class="row">
+      <div class="col-md-2">
+        <%= image_tag "https://secure.gravatar.com/avatar/bebfcf57d6d8277d806a9ef3385c078d",
+          size: Settings.user.avatar.size_100, alt: t("user_name") %>
+      </div>
+      <div class="col-md-10">
+        <h3><%= link_to activity.user.name, "#" %></h3>
+        <span><%= activity.activities %></span>
+      </div>
+    </div>
+  <% end %>
+  <%= will_paginate @activities %>
+</div>
+
