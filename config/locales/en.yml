@@ -55,4 +55,5 @@ en:
   edit_profile: "Edit Profile"
   update_user_success: "Update user successfully!"
   permission_denied: "Permission denied. Wrong user. Please try again!"
-
+  category:
+    start: "Start"
