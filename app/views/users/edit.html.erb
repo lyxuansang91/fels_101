@@ -1,0 +1,13 @@
+<% provide :title, t("edit_profile") %>
+<h1><%= t "edit_profile" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @user, html: {mutilpart: true} do |f| %>
+      <%= render "fields", f: f %>
+      <%= f.label :avatar %>
+      <%= image_tag @user.avatar.url.to_s if @user.avatar.present? %>
+      <%= f.file_field :avatar %>
+      <%= f.submit t("edit_profile"), class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

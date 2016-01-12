@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
       flash[:danger] = t "please_sign_in"
     end
   end
+
+  def correct_user
+    unless current_user? @user
+      flash[:danger] = t "permission_denied"
+      redirect_back_or root_url
+    end
+  end
 end
