@@ -55,5 +55,13 @@ en:
   edit_profile: "Edit Profile"
   update_user_success: "Update user successfully!"
   permission_denied: "Permission denied. Wrong user. Please try again!"
+  categories: "Categories"
   category:
     start: "Start"
+  word:
+    list: "Word List"
+    filter: "Filter"
+    all: "All"
+    learned: "Learned"
+    not_learned: "Not Learned"
+
