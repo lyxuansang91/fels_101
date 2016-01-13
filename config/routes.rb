@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
-
   root "static_pages#home"
+
   resources :words, only: [:index]
   resources :users, except: [:destroy]
-  resources :categories, only: [:index]
+  resources :users, only: [:create, :show, :edit, :update]
+  resources :categories, only: [:index] do
+    resources :lessons, only: [:index]
+  end
+  resources :lessons, only: [:show, :update]
+
   get "/help" => "static_pages#help"
   get "/about" => "static_pages#about"
   get "/contact" => "static_pages#contact"

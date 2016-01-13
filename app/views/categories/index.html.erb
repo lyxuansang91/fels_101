@@ -5,7 +5,7 @@
         <span><%= item.name %></span>
       </h4>
       <%= item.description %>
-      <%= link_to t("category.start"), "#", class: "btn btn-default pull-right" %>
+      <%= link_to t("category.start"), category_lessons_path(item), class: "btn btn-default pull-right" %>
     </div>
     <textarea class="text-area col-md-6 <%= get_pull(index) %>"></textarea>
   </div>

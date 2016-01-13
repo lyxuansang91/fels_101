@@ -4,12 +4,10 @@ user:
     size_100: "100x100"
     size_150: "150x150"
 word:
-  per_page: 2
+  per_page: 10
   ALL_WORDS: 0
   LEARN_WORDS: 1
   NOT_LEARN_WORDS: 2
+  LESSON_SIZE: 9
   LEARNED_WORDS_QUERY: "id in (SELECT word_id from results where lesson_id in (
     select id from lessons where user_id = :user_id))"
-
-
-
