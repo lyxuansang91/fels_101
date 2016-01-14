@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "static_pages#home"
   resources :words, only: [:index]
-  resources :users, only: [:create, :show, :edit, :update]
+  resources :users, except: [:destroy]
   resources :categories, only: [:index]
   get "/help" => "static_pages#help"
   get "/about" => "static_pages#about"

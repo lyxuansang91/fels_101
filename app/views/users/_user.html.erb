@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-2">
+    <%= image_tag user.avatar.url.to_s, size: Settings.user.avatar.size_150, alt: t("user_name") %>
+  </div>
+  <div class="col-md-4">
+    <h4><%= link_to user.name, user_path(user) %></h4>
+  </div>
+</div>
