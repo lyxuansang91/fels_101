@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index] do
     resources :lessons, only: [:index]
   end
-  resources :lessons, only: [:show, :update]
+  resources :lessons, only: [:show, :update] do
+    resources :results, only: [:index]
+  end
 
   get "/help" => "static_pages#help"
   get "/about" => "static_pages#about"

@@ -1,0 +1,16 @@
+<h2><%= current_user.name %></h2>
+<h3><%= get_info @lesson %></h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t "words" %></th>
+      <th><%= t "answer" %></th>
+      <th><%= t "check" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @results %>
+  </tbody>
+</table>
+<%= link_to t("categories"), categories_url, class: "btn btn-default btn-primary pull-right" %>
+<div class="clearfix"></div>

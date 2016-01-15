@@ -13,19 +13,20 @@ class LessonsController < ApplicationController
     end
   end
 
-  def show
+  def edit
   end
 
-  def edit
+  def show
   end
 
   def update
     if @lesson.update_attributes lesson_params
       flash[:success] = t "lesson.submit_success"
+      redirect_to lesson_results_path @lesson
     else
       flash[:notice] = t "lesson.update_fail"
+      redirect_to root_url
     end
-    redirect_to root_url
   end
 
   private
