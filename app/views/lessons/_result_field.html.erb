@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="coll-md-6 col-offset-md-6">
+    <p class="alert alert-info"><%= f.object.word.name %></p>
+  </div>
+  </br>
+  <div class="col-lmd-3">
+    <% f.object.word.answers.each_with_index do |answer, index| %>
+      <%= f.radio_button :answer_id, answer.id, checked: index == 0 %>
+      <%= answer.name %>
+    <% end %>
+  </div>
+</div>

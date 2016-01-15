@@ -56,6 +56,9 @@ en:
   update_user_success: "Update user successfully!"
   permission_denied: "Permission denied. Wrong user. Please try again!"
   categories: "Categories"
+  study_with_me: "Study with me"
+  basic: "Basic "
+  error: "Error"
   category:
     start: "Start"
   word:
@@ -64,4 +67,11 @@ en:
     all: "All"
     learned: "Learned"
     not_learned: "Not Learned"
+  lesson:
+    create_success: "Create lesson is successfully!"
+    submit_success: "Congratulation. You've submitted this lesson!"
+    update_fail: "Try to submit lesson test again!"
+    create_failed: "Create lesson has problems. Try again!"
+    not_enough_word: "Not enough words to create. Please try again!"
+    can_not_save_words: "Can not load words in lesson. Try again!"
 
