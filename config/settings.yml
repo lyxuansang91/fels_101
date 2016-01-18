@@ -1,4 +1,7 @@
 per_page: 3
+activity:
+  LESSON_TYPE: 1
+  RELATIONSHIP_TYPE: 2
 user:
   avatar:
     size_100: "100x100"
