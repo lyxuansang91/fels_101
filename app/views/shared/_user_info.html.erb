@@ -1,2 +1,11 @@
 <%= image_tag user.avatar.url.to_s, size: Settings.user.avatar.size_150, alt: t("user_name") %>
-<h2><%= user.name %></h2>
+<h2><%= link_to user.name, user %></h2>
+<h5>
+  <strong id="following"><%= user.followed_users.count %></strong>
+  <%= link_to t("following"), relationships_path(id: user.id, type: "followed_users") %>|
+  <strong id="followers"><%= user.followers.count %></strong>
+  <%= link_to t("follower"), relationships_path(id: user.id, type: "followers") %>
+</h5>
+<h5>
+  <%= t "word.user_learned_word", number_of_words: user.number_learned_words %>
+</h5>

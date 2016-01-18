@@ -4,6 +4,7 @@
       <%= render "shared/user_info", user: @user %>
     </div>
     <div class="col-md-8">
+      <%= render "follow_form" unless current_user? @user %>
       <%= render "shared/activity" %>
       <hr />
     </div>

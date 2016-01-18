@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :lessons, only: [:show, :update] do
     resources :results, only: [:index]
   end
+  resources :relationships, only: [:index, :create, :destroy]
 
   get "/help" => "static_pages#help"
   get "/about" => "static_pages#about"

@@ -30,6 +30,7 @@ en:
   confirm_password: "Confirm Password"
   sign_in: "Sign in"
   sign_up: "Sign up"
+  learned: "Learned"
   create_account: "Create my account"
   new_users: "New user?"
   words: "Words"
@@ -62,6 +63,8 @@ en:
   study_with_me: "Study with me"
   basic: "Basic "
   error: "Error"
+  following: "following"
+  follower: "follower"
   category:
     start: "Start"
   word:
@@ -70,6 +73,7 @@ en:
     all: "All"
     learned: "Learned"
     not_learned: "Not Learned"
+    user_learned_word: "You've learned %{number_of_words} words"
   lesson:
     create_success: "Create lesson is successfully!"
     submit_success: "Congratulation. You've submitted this lesson!"
@@ -77,4 +81,7 @@ en:
     create_failed: "Create lesson has problems. Try again!"
     not_enough_word: "Not enough words to create. Please try again!"
     can_not_save_words: "Can not load words in lesson. Try again!"
+  relationship:
+    follow: "Follow"
+    unfollow: "Unfollow"
 
