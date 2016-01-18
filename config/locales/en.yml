@@ -84,4 +84,6 @@ en:
   relationship:
     follow: "Follow"
     unfollow: "Unfollow"
-
+  activity:
+    add_follow_user: "%{follower_user} has followed %{followed_user}"
+    add_lesson: "%{user_name} has learned 20 word in %{category_name}"
