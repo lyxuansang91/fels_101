@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
     class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   has_many :followed_users, through: :relationships, source: :followed
+  has_many :lessons
 
   before_save {self.email = email.downcase}
   before_create :create_remember_token
@@ -39,6 +40,10 @@ class User < ActiveRecord::Base
 
   def recent_activity
     Activity.from_users_followed_by self
+  end
+
+  def number_learned_words
+    Word.learned(id).count
   end
 
   private
