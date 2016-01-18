@@ -6,6 +6,7 @@ class Lesson < ActiveRecord::Base
   has_many :results, dependent: :destroy
   validate :check_number_of_words, on: :create
   accepts_nested_attributes_for :results
+  after_create :add_lesson_activity
 
   def number_correct_answer
     answers.where(correct_answer: true).count
@@ -17,5 +18,11 @@ class Lesson < ActiveRecord::Base
     if number_of_words < Settings.word.LESSON_SIZE
       errors.add :base, I18n.t("lesson.not_enough_word")
     end
+  end
+
+  def add_lesson_activity
+    Activity.create user_id: user.id, user_name: user.name,
+      target: category.name, type_content:
+      Settings.activity.LESSON_SIZE
   end
 end
