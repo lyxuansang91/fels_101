@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
       redirect_back_or root_url
     end
   end
+
+  def authenticate_admin
+    unless current_user.admin?
+      flash[:danger] = t "permission_denied"
+      redirect_to root_url
+    end
+  end
 end
