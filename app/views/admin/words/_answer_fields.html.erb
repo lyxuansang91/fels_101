@@ -1,0 +1,9 @@
+<div class="col-md-8">
+  <%= f.text_field :name, class: "form-control" %>
+</div>
+<div class="col-md-1">
+  <%= f.check_box :correct_answer, class: "answered" %>
+</div>
+<div class="col-md-1">
+  <%= link_to_remove_fields t("answer.remove"), f %>
+</div>

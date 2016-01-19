@@ -1,0 +1,15 @@
+<tr>
+  <td class="col-md-1"><%= word.id %></td>
+  <td class="col-md-1"><%= word.name %></td>
+  <% word.answers.each do |answer| %>
+    <td class="col-md-2">
+      <i class="glyphicon glyphicon-<%= answer.correct_answer? ? t("ok") : t("remove") %>"></i>
+      <%= answer.name %>
+    </td>
+  <% end %>
+  <td class="col-md-1">
+    <%= link_to t("button.delete"), admin_category_word_path(@category, word),
+      method: :delete, data: {confirm: t("alert")} %>
+    <%= link_to t("button.edit"), edit_admin_category_word_path(@category, word) %>
+  </td>
+</tr>
