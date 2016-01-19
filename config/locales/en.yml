@@ -67,6 +67,8 @@ en:
   follower: "follower"
   alert: "Do you want to delete?"
   admin: "Administration"
+  ok: "ok"
+  remove: "remove"
   button:
     word: "Word"
     edit: "Edit"
@@ -79,6 +81,10 @@ en:
     learned: "Learned"
     not_learned: "Not Learned"
     user_learned_word: "You've learned %{number_of_words} words"
+    create_success: "Create word is successfully!"
+    delete_success: "Delete word is successfully!"
+    update_success: "Update word is successfully!"
+    delete_error: "Delete word is failed!"
   lesson:
     create_success: "Create lesson is successfully!"
     submit_success: "Congratulation. You've submitted this lesson!"
@@ -104,3 +110,7 @@ en:
     new: "New category"
   table:
     action: "Action"
+  answer:
+    add: "Add"
+    remove: "Remove"
+  answers: "Answer %{number}"

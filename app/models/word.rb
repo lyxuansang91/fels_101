@@ -3,7 +3,7 @@ class Word < ActiveRecord::Base
   belongs_to :category
   belongs_to :lesson
   has_many :answers, dependent: :destroy
-  accepts_nested_attributes_for :answers
+  accepts_nested_attributes_for :answers, allow_destroy: true
   scope :by_category, ->(category_id){where category_id: category_id}
   scope :learned, ->(user_id){where Settings.word.LEARNED_WORDS_QUERY, user_id:
     user_id}
