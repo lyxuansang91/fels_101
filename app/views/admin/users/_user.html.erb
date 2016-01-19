@@ -1,0 +1,19 @@
+<tr id="info-<%= user.id %>">
+  <td><%= user.id %></td>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= image_tag(user.avatar.url) if user.avatar.present? %></td>
+  <td>
+    <%= link_to t("button.delete"), admin_user_path(user),
+      method: :delete, data: {confirm: t("alert")}, remote: true %> |
+    <%= form_for [:admin, user], remote: true do |f| %>
+      <% if user.admin? %>
+        <%= f.hidden_field :admin, value: false, id: "val-user-#{user.id}" %>
+        <%= f.submit t("user.remove_admin"), id: "user-#{user.id}" %>
+      <% else %>
+        <%= f.hidden_field :admin, value: true, id: "val-user-#{user.id}" %>
+        <%= f.submit t("user.set_admin"), id: "user-#{user.id}" %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

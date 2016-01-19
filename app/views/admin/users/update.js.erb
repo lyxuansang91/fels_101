@@ -1,0 +1,2 @@
+$("#val-user-<%= @user.id %>").val("<%= @user.admin? ? "false" : "true" %>");
+$("#user-<%= @user.id %>").val("<%= @user.admin? ? t("user.remove_admin") : t("user.set_admin") %>");
