@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    root "categories#index"
+    resources :categories, except: [:show]
+  end
+
   root "static_pages#home"
 
   resources :words, only: [:index]

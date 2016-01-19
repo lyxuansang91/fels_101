@@ -65,8 +65,13 @@ en:
   error: "Error"
   following: "following"
   follower: "follower"
-  category:
-    start: "Start"
+  alert: "Do you want to delete?"
+  admin: "Administration"
+  button:
+    word: "Word"
+    edit: "Edit"
+    delete: "Delete"
+    submit: "Submit"
   word:
     list: "Word List"
     filter: "Filter"
@@ -87,3 +92,15 @@ en:
   activity:
     add_follow_user: "%{user_name} has followed %{target}"
     add_lesson: "%{user_name} has learned in %{target}"
+  category:
+    start: "Start"
+    create_success: "Create category is successfully!"
+    update_success: "Update category is successfully!"
+    delete_success: "Delete category is successfully!"
+    delete_error: "Delete category is failed!"
+    list: "List categories"
+    name: "Name"
+    description: "Description"
+    new: "New category"
+  table:
+    action: "Action"

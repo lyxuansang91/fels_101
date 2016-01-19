@@ -7,6 +7,7 @@
           <li><%= link_to t("help"), help_url %></li>
           <% if signed_in? %>
             <li><%= link_to t("users"), users_url %></li>
+            <li><%= link_to t("admin"), admin_root_url if current_user.admin? %></li>
             <li class="dropdown" id="dropdownMenuDivider">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                 <%= t "account" %>
