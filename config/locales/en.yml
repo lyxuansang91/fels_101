@@ -69,6 +69,22 @@ en:
   admin: "Administration"
   ok: "ok"
   remove: "remove"
+  user:
+    create_success: "Create user is successfully!"
+    create_error: "Create user is failed!"
+    update_success: "Update user is successfully!"
+    update_error: "update user is failed!"
+    destroy_success: "Delete user is successfully!"
+    destroy_error: "Delete user is failed!"
+    remove_admin: "Remove"
+    set_admin: "Active"
+    list: "List user"
+    email: "Email"
+    name: "Name"
+    avatar: "Avatar"
+  administration:
+    category: "Manage category"
+    user: "Manage user"
   button:
     word: "Word"
     edit: "Edit"

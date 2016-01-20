@@ -1,0 +1,21 @@
+<% provide :title, t("user.list") %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <h1 class="text-left"><%= t "user.list" %></h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-md-1">#</th>
+          <th class="col-md-3"><%= t("user.email") %></th>
+          <th class="col-md-4"><%= t("user.name") %></th>
+          <th class="col-md-4"><%= t("user.avatar") %></th>
+          <th class="col-md-6"><%= t("table.action") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @users %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </div>
+</div>
